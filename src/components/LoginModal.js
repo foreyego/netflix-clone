@@ -1,4 +1,23 @@
+'use client';
+import { useState } from "react";
+
 export default function LoginModal({isOpen}) {
+  const [isSignup, setIsSignup] = useState(true);
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("N/A");
+
+  const toggleSignup = () => {
+    setIsSignup(!isSignup);
+  }
+
+  const updateEmail = (text) => {
+    setEmail(text.target.value);
+  }
+
+  const updateFullName = (text) => {
+    setFullName(text.target.value);
+  }
+
   if (isOpen == false) {
     return null;
   }
@@ -12,11 +31,20 @@ export default function LoginModal({isOpen}) {
         </button>
         <div className="text-center">
           <h2 className="text-3xl font-bold text-red-600">Sign In</h2>
-          <p className="text-gray-200">Welcome Back to Netflix!</p>
+          <p className="text-gray-200">Welcome Back to Netflix! {email} - {fullName}</p>
         </div>
         <form className="mt-4 space-y-6">
+          { isSignup && (<div className="transition">
+            <input 
+            onChange={updateFullName}
+              type="text"
+              placeholder="enter your full name"
+              className="w-full p-4 border border-gray-500 rounded-md bg-gray-800/50 focus:outline-none focus:ring-red-500 focus:ring-2"
+            />
+          </div>  )}        
           <div>
             <input
+            onChange={updateEmail}
               type="email"
               placeholder="enter your email"
               className="w-full p-4 border border-gray-500 rounded-md bg-gray-800/50 focus:outline-none focus:ring-red-500 focus:ring-2"
@@ -40,7 +68,9 @@ export default function LoginModal({isOpen}) {
           <button className="w-full p-4 bg-red-600 rounded-md font-semibold hover:bg-red-800 transition cursor-pointer">
             Sign In
           </button>
-          <p className="text-center">New to netflix? <a href="#" className="font-semibold text-gray-400">Sign Up now.</a></p>
+          <p className="text-center">New to netflix? 
+            <a href="#" className="font-semibold text-gray-400" onClick={toggleSignup}>Sign Up now.</a>
+            </p>
         </form>
       </div>
     </div>

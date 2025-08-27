@@ -1,3 +1,6 @@
+import {Play, UserPlus} from 'lucide-react';
+
+
 export default function HeroSection() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-red-500">
@@ -26,10 +29,10 @@ export default function HeroSection() {
             </p>
             <div className="flex gap-6 mt-8">
                 <button className="bg-red-500 px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition cursor-pointer">
-                    Watch Now
+                    <Play className='h-5 w-5 inline mr-3' />Watch Now
                 </button>
                 <button className="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
-                    Register
+                  <UserPlus className='h-5 w-5 inline mr-3' />  Register
                 </button>
             </div>
           </div>
