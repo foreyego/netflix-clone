@@ -3,7 +3,7 @@ import {Play, UserPlus} from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-red-500">
+    <div className="relative h-screen w-full overflow-hidden bg-red-500 p-4">
       <div className="absolute inset-0 bg-center bg-black/80 bg-no-repeat z-10"></div>
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
@@ -13,7 +13,7 @@ export default function HeroSection() {
         }}
       ></div>
 
-      <div className="relative h-full z-20 flex items-center">
+      <div className="relative h-full z-20 flex items-center sm:mx-auto sm:max-w-lg md:max-w-7xl">
         <div className="container mx-auto">
           <div className="max-w-xl">
             <h1 className="text-4xl font-bold text-white leading-tight">
@@ -27,11 +27,11 @@ export default function HeroSection() {
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam.
             </p>
-            <div className="flex gap-6 mt-8">
-                <button className="bg-red-500 px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition cursor-pointer">
+            <div className="md:flex gap-6 mt-8 flex-row items-center">
+                <button className="bg-red-500 px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition cursor-pointer w-full mb-2 md:w-60">
                     <Play className='h-5 w-5 inline mr-3' />Watch Now
                 </button>
-                <button className="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
+                <button className="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer w-full mb-2 md:w-60">
                   <UserPlus className='h-5 w-5 inline mr-3' />  Register
                 </button>
             </div>
