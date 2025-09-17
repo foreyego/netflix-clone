@@ -9,11 +9,20 @@ export default function Home() {
     <div className="w-full">
       <Header />
       <HeroSection/>
-      <div className="overflow-x-hidden w-screen flex justify-start space-x-5 p-5 max-w-7xl mx-auto">
-
-      <h1 className="text-2xl">Trending Now!</h1>
+      <div className="px-8">
+        <section className="mb-8">
+          <h1 className="text-2xl font-bold mb-2">Trending Now!</h1>
+          <MovieSection />
+        </section>
+        <section className="mb-8">
+          <h1 className="text-2xl font-bold mb-2">For You</h1>
+          <MovieSection />
+        </section>
+        <section className="mb-8">
+          <h1 className="text-2xl font-bold mb-2">Coming Soon</h1>
+          <MovieSection />
+        </section>
       </div>
-      <MovieSection />
       <LoginModal isOpen={false}/>
     </div>
   );

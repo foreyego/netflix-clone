@@ -335,10 +335,14 @@ export default function MovieSection() {
     },
   ];
   return (
-    <div className="grid grid-cols-6 gap-4 max-w-7xl mx-auto">
-      {movies.map((m) => (
-        <MovieCard title={m.title} duration={m.duration} description={m.description} image={m.image} vote_average={m.vote_average} />
-      ))}
+    <div className="relative">
+      <div className="flex overflow-x-scroll space-x-4">
+        {movies.map((m) => (
+          <div className="md:min-w-[200px] md:max-w-[200px] min-w-[150px] max-w-[150px]">
+          <MovieCard title={m.title} duration={m.duration} description={m.description} image={m.image} vote_average={m.vote_average} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

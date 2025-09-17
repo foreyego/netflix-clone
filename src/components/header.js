@@ -22,7 +22,7 @@ export default function Header() {
             My List
           </div>
         </div>
-        <div className="flex space-x-4 items-center">
+        <div className="flex flex-end space-x-4 items-center">
           <SearchBar />
           <div className="hidden items-center w-full md:flex">
             <User className="w-4 h-4 mr-2"/>
