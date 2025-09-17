@@ -338,7 +338,7 @@ export default function MoviePage() {
   return (
     <div className="w-full pt-30">
       <Header />
-      <div className="w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex gap-2 items-center">
           <TvMinimalPlay className="h-10 w-10 text-red-600" />
           <h1 className="text-2xl font-bold mb-2">Movies</h1>
@@ -363,7 +363,7 @@ export default function MoviePage() {
             <option>Ratings</option>
           </select>
         </div>
-        <div className="grid grid-cols-6 mt-4">
+        <div className="grid grid-cols-2 mt-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
           {movies.map((m) => (
             <div className="md:min-w-[200px] md:max-w-[200px] min-w-[150px] max-w-[150px] py-2">
               <MovieCard
