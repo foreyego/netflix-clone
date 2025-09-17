@@ -1,5 +1,6 @@
 import SearchBar from "@/components/SearchBar";
 import {User, Menu} from 'lucide-react';
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -10,10 +11,10 @@ export default function Header() {
         </div>
         <div className="cursor-pointer space-x-5 hidden md:flex">
           <div className="transition hover:font-bold hover:text-red-500">
-            Home
+            <Link href="/">Home</Link>
           </div>
           <div className="transition hover:font-bold hover:text-red-500">
-            Movies
+            <Link href="/movies">Movies</Link>
           </div>
           <div className="transition hover:font-bold hover:text-red-500">
             TV Show
