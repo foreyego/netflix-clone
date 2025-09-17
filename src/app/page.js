@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import LoginModal from "@/components/LoginModal";
 import MovieSection from "@/components/MovieSection";
@@ -11,19 +12,17 @@ export default function Home() {
       <HeroSection/>
       <div className="px-8">
         <section className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">Trending Now!</h1>
-          <MovieSection />
+          <MovieSection title="Trending Now!" />
         </section>
         <section className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">For You</h1>
-          <MovieSection />
+          <MovieSection title="For You"/>
         </section>
         <section className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">Coming Soon</h1>
-          <MovieSection />
+          <MovieSection title="Watching List"/>
         </section>
       </div>
       <LoginModal isOpen={false}/>
+      <Footer />
     </div>
   );
 }

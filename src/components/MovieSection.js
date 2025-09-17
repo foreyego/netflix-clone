@@ -1,8 +1,6 @@
 import MovieCard from "@/components/MovieCard";
 
-export default function MovieSection() {
-  const title = "Halo";
-
+export default function MovieSection({title="default"}) {
   const movies = [
     {
       id: "tt26581740",
@@ -336,10 +334,11 @@ export default function MovieSection() {
   ];
   return (
     <div className="relative">
-      <div className="flex overflow-x-scroll space-x-4">
+      <h2 className="text-2xl font-bold mb-2 w-7xl mx-auto">{title}</h2>
+      <div className="flex overflow-x-scroll space-x-4 w-7xl mx-auto">
         {movies.map((m) => (
           <div className="md:min-w-[200px] md:max-w-[200px] min-w-[150px] max-w-[150px]">
-          <MovieCard title={m.title} duration={m.duration} description={m.description} image={m.image} vote_average={m.vote_average} />
+          <MovieCard key={m.id} title={m.title} duration={m.duration} description={m.description} image={m.image} vote_average={m.vote_average} />
           </div>
         ))}
       </div>
