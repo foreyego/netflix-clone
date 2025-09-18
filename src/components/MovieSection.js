@@ -333,11 +333,11 @@ export default function MovieSection({title="default"}) {
     },
   ];
   return (
-    <div className="relative">
-      <h2 className="text-2xl font-bold mb-2 w-7xl mx-auto">{title}</h2>
-      <div className="flex overflow-x-scroll space-x-4 w-7xl mx-auto">
+    <div className="relative px-2">
+      <h2 className="text-2xl font-bold mb-2 max-w-7xl mx-auto">{title}</h2>
+      <div className="flex overflow-x-scroll space-x-3 max-w-7xl mx-auto scrollbar-hide sm:space-x-4">
         {movies.map((m) => (
-          <div className="md:min-w-[200px] md:max-w-[200px] min-w-[150px] max-w-[150px]">
+          <div className="w-[140px] flex-none sm:w-[160px] md:w-[180px] lg:w-[200px]">
           <MovieCard key={m.id} title={m.title} duration={m.duration} description={m.description} image={m.image} vote_average={m.vote_average} />
           </div>
         ))}

@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 w-full bg-black/70 p-2 z-25 backdrop-blur-md">
-      <div className="m-4 flex justify-between space-x-12 text-lg text-white">
+    <header className="fixed top-0 w-full bg-black/70 px-4 py-2 z-25 backdrop-blur-md">
+      <div className="m-4 flex justify-between space-x-12 text-lg text-white max-w-7xl mx-auto items-center">
         <div className="font-bold text-red-600 text-3xl">
           <div>NETFLIX</div>
         </div>
