@@ -335,39 +335,55 @@ export default function MoviePage() {
       type: "movie",
     },
   ];
+  const allGenres = [];
+  movies.forEach(
+    movie => {
+      movie.genre.forEach(
+        g => {
+          if (!allGenres.includes(g)){
+            allGenres.push(g);
+          }
+        }
+      );
+    }
+  );
+  console.log(allGenres);
+
   return (
     <div className="w-full pt-30">
       <Header />
       <div className="max-w-7xl mx-auto">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center ml-2">
           <TvMinimalPlay className="h-10 w-10 text-red-600" />
           <h1 className="text-2xl font-bold mb-2">Movies</h1>
         </div>
-        <div className="flex gap-6 items-center text-xl bg-gray-900 p-4 mt-2 rounded-md">
+        <div className="flex flex-col gap-6 items-start text-xl bg-gray-900 p-4 mt-2 rounded-md md:flex-row md:items-center">
           <div className="flex items-center gap-2">
             <Filter className="h-5 w-5" />
             <p>Filters:</p>
           </div>
-          <select className="bg-gray-800 py-3 px-5">
-            <option>Animation</option>
-            <option>Fantasy</option>
-            <option>Thriller</option>
-            <option>Comedy</option>
-            <option>Documentary</option>
-            <option>Sci-Fi</option>
+          <select className="bg-gray-800 py-3 px-5 w-full md:w-auto">
+            <option value="All">All Genres</option>
+            {
+              allGenres.map(
+                genre =>
+                  (
+                    <option value={genre} key={genre}>{genre}</option>
+                  )
+              )
+            }
           </select>
-          <select className="bg-gray-800 py-3 px-5">
+          <select className="bg-gray-800 py-3 px-5 w-full md:w-auto">
             <option>Release Year</option>
             <option>A-Z</option>
             <option>Z-A</option>
             <option>Ratings</option>
           </select>
         </div>
-        <div className="grid grid-cols-2 mt-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-6 ">
           {movies.map((m) => (
-            <div className="md:min-w-[200px] md:max-w-[200px] min-w-[150px] max-w-[150px] py-2">
+            <div key={m.id} className="w-full">
               <MovieCard
-                key={m.id}
                 title={m.title}
                 duration={m.duration}
                 description={m.description}
