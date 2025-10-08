@@ -1,6 +1,8 @@
 import { Play, Plus } from "lucide-react";
+import Link from "next/link";
 
 export default function MovieCard({
+  id = "",
   title = "N/A",
   duration = "",
   description = "",
@@ -8,6 +10,7 @@ export default function MovieCard({
   vote_average = "",
 }) {
   return (
+    <Link href={`/movies/${id}`}>
     <div className="aspect-[2/3] rounded-md overflow-hidden relative text-white group transition-all duration-300 hover:scale-105">
       <div className="opacity-0 bg-black absolute inset-0 z-1 group-hover:opacity-80 transition-all duration-300"></div>
       <span className="absolute z-5 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 top-2 right-2 bg-red-500 p-2 grow-0 h-10 w-10 text-center rounded">
@@ -30,5 +33,6 @@ export default function MovieCard({
       </div>
       <img src={image} className="z-0 object-cover w-full h-full" />
     </div>
+    </Link>
   );
 }
